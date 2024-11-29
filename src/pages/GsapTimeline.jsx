@@ -1,5 +1,14 @@
+import gsap from 'gsap';
+
 const GsapTimeline = () => {
   // TODO: Implement the gsap timeline
+  const timeline = gsap.timeline({
+    repeat: -1,
+    yoyo: true,
+    duration: 2,
+  });
+  timeline.to('#yellow-box', { x: 200, rotation: 360 });
+  timeline.to('#yellow-box', { y: 300, rotation: 360 });
 
   return (
     <main>
@@ -11,26 +20,26 @@ const GsapTimeline = () => {
       </p>
 
       <p className="mt-5 text-gray-500">
-        The <code>gsap.timeline()</code> method is similar to the{" "}
-        <code>gsap.to()</code>, <code>gsap.from()</code>, and{" "}
-        <code>gsap.fromTo()</code> methods, but the difference is that the{" "}
+        The <code>gsap.timeline()</code> method is similar to the{' '}
+        <code>gsap.to()</code>, <code>gsap.from()</code>, and{' '}
+        <code>gsap.fromTo()</code> methods, but the difference is that the{' '}
         <code>gsap.timeline()</code> method is used to create a timeline
-        instance that can be used to manage multiple animations, while the{" "}
-        <code>gsap.to()</code>, <code>gsap.from()</code>, and{" "}
+        instance that can be used to manage multiple animations, while the{' '}
+        <code>gsap.to()</code>, <code>gsap.from()</code>, and{' '}
         <code>gsap.fromTo()</code> methods are used to animate elements from
         their current state to a new state, from a new state to their current
         state, and from a new state to a new state, respectively.
       </p>
 
       <p className="mt-5 text-gray-500">
-        Read more about the{" "}
+        Read more about the{' '}
         <a
           href="https://greensock.com/docs/v3/GSAP/gsap.timeline()"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >
           gsap.timeline()
-        </a>{" "}
+        </a>{' '}
         method.
       </p>
 

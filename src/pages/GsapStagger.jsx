@@ -1,6 +1,23 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+
 const GsapStagger = () => {
   // TODO: Implement the gsap.stagger() method
-
+  useGSAP(() => {
+    gsap.to('.stagger-box', {
+      y: 250,
+      rotation: 360,
+      borderRadius: '100%',
+      repeat: -1,
+      yoyo: true,
+      stagger: {
+        amount: 1, // The amount of time to stagger between each element
+        from: 'end', // The starting position of the stagger
+        ease: 'power1.inOut', // The easing function for the stagger
+        duration: 0.5, // The duration of each individual animation
+      },
+    });
+  }, []);
   return (
     <main>
       <h1>GsapStagger</h1>
@@ -19,14 +36,14 @@ const GsapStagger = () => {
       </p>
 
       <p className="mt-5 text-gray-500">
-        Read more about the{" "}
+        Read more about the{' '}
         <a
           href="https://gsap.com/resources/getting-started/Staggers"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >
           Gsap Stagger
-        </a>{" "}
+        </a>{' '}
         feature.
       </p>
 

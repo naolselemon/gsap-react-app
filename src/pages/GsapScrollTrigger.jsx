@@ -1,6 +1,24 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const GsapScrollTrigger = () => {
   // TODO: Implement the gsap scroll trigger
-
+  useGSAP(() => {
+    gsap.to('.scroll-box', {
+      x: 300,
+      rotation: 360,
+      scrollTrigger: {
+        trigger: '.scroll-box',
+        start: 'top 80%',
+        end: 'bottom 80%',
+        toggleActions: 'restart pause resume pause',
+        scrub: true,
+      },
+    });
+  }, []);
   return (
     <main>
       <h1>GsapScrollTrigger</h1>
@@ -14,18 +32,18 @@ const GsapScrollTrigger = () => {
         With ScrollTrigger, you can define various actions to be triggered at
         specific scroll points, such as starting or ending an animation,
         scrubbing through animations as the user scrolls, pinning elements to
-        the screen, and more.{" "}
+        the screen, and more.{' '}
       </p>
 
       <p className="mt-5 text-gray-500">
-        Read more about the{" "}
+        Read more about the{' '}
         <a
           href="https://gsap.com/docs/v3/Plugins/ScrollTrigger/"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >
           gsap scroll trigger
-        </a>{" "}
+        </a>{' '}
         method.
       </p>
 
